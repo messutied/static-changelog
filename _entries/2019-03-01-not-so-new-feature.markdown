@@ -8,6 +8,8 @@ category: bug-fix
 The reset your password form had a bug that prevented it from sending you the email,
 it is now fixed.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qvLr5VyGBrY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in

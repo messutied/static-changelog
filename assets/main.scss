@@ -17,6 +17,7 @@ body {
 main {
   flex: 1;
   padding: 50px 0;
+  margin-top: 60px;
 }
 
 .container {
@@ -38,6 +39,10 @@ $header-border: #EAEAEA;
 
 header.site-header {
   border-bottom: 1px solid $header-border;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1;
 }
 
 header.site-header .container {
