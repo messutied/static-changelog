@@ -3,32 +3,37 @@ layout: default
 ---
 
 <div class="home">
-  {% if page.title %}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {% endif %}
 
   {{ content }}
 
-  {% if site.posts.size > 0 %}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-      <li>
+  {% if site.entries.size > 0 %}
+  {% assign items = site.entries | sort: 'date' %}
+    <div class="entry-list">
+      {% for post in items reversed %}
+      <div class="entry">
+        <div class="dot"></div>
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+
+        <div class="entry-meta">
+          <a href="{{ post.url | relative_url }}">
+            <div class="entry-date">{{ post.date | date: date_format }}</div>
+            <div class="entry-version">v{{ post.version }}</div>
           </a>
-        </h3>
-        {% if site.show_excerpts %}
-          {{ post.excerpt }}
-        {% endif %}
-      </li>
+        </div>
+
+        <div class="entry-tags">
+          <span class="entry-category entry-category-{{ post.category }}">{{ post.category }}</span>
+        </div>
+
+        <div class="entry-content">
+          {{ post.content }}
+          <div style="clear:both"></div>
+        </div>
+
+        <div class="last-dot"></div>
+      </div>
       {% endfor %}
-    </ul>
-
-    <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+    </div>
   {% endif %}
-
 </div>
