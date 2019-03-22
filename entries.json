@@ -1,0 +1,18 @@
+---
+layout: null
+---
+{%- capture newline %}
+{% endcapture -%}
+{% assign items = site.entries | sort: 'date' %}
+[
+  {% for post in items reversed %}
+  {
+    "url": "{{ post.url }}",
+    "date": "{{ post.date }}",
+    "version": "{{ post.version }}",
+    "title": "{{ post.title | escape }}",
+    "content": "{{ post.content | replace: newline, '\n' | replace: '"', '\"'  }}",
+    "category": "{{ post.category }}"
+  }
+  {% endfor %}
+]
