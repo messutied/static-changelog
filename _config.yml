@@ -16,8 +16,8 @@
 title: Statuspal Changelog
 email: support@statuspal.io
 description: See whats new on Statuspal
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://messutied.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/static-changelog" # the subpath of your site, e.g. /blog
 company: Statuspal
 company_url: https://statuspal.io
 twitter_username: statuspalio
